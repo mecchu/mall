@@ -11,7 +11,6 @@ package io.renren.modules.job.utils;
 import io.renren.common.exception.RRException;
 import io.renren.common.utils.Constant;
 import io.renren.modules.job.entity.ScheduleJobEntity;
-import org.quartz.*;
 
 /**
  * 定时任务工具类

@@ -1,45 +1,51 @@
 package me.cchu.mall.coupon.controller;
 
-import me.cchu.common.utils.PageUtils;
-import me.cchu.common.utils.R;
-import me.cchu.mall.coupon.entity.CouponEntity;
-import me.cchu.mall.coupon.service.CouponService;
+import java.util.Arrays;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Map;
+import me.cchu.mall.coupon.entity.CouponEntity;
+import me.cchu.mall.coupon.service.CouponService;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.R;
+
+
 
 /**
  * 优惠券信息
+ *
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
-
-    @Autowired
-    private CouponService couponService;
 
     @Value("${coupon.user.name}")
     private String name;
     @Value("${coupon.user.age}")
     private Integer age;
 
-    @RequestMapping("/test")
-    public R test() {
+    @Autowired
+    private CouponService couponService;
+
+    @GetMapping("/config")
+    public R getConfigTest() {
         return R.ok().put("name", name).put("age", age);
     }
 
     /**
-     * 测试 Feign 远程调用：member服务调此方法
-     *
-     * @return
+     * 会员优惠券
      */
     @RequestMapping("/member/list")
-    public R membercoupons() {
+    public R memberCoupons() {
         CouponEntity couponEntity = new CouponEntity();
-        couponEntity.setCouponName("满100减10");
+        couponEntity.setCouponName("满10减10");
+
         return R.ok().put("coupons", Arrays.asList(couponEntity));
     }
 
@@ -48,19 +54,20 @@ public class CouponController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:coupon:list")
-    public R list(@RequestParam Map<String, Object> params) {
+    public R list(@RequestParam Map<String, Object> params){
         PageUtils page = couponService.queryPage(params);
 
         return R.ok().put("page", page);
     }
+
 
     /**
      * 信息
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:coupon:info")
-    public R info(@PathVariable("id") Long id) {
-        CouponEntity coupon = couponService.getById(id);
+    public R info(@PathVariable("id") Long id){
+		CouponEntity coupon = couponService.getById(id);
 
         return R.ok().put("coupon", coupon);
     }
@@ -70,8 +77,8 @@ public class CouponController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:coupon:save")
-    public R save(@RequestBody CouponEntity coupon) {
-        couponService.save(coupon);
+    public R save(@RequestBody CouponEntity coupon){
+		couponService.save(coupon);
 
         return R.ok();
     }
@@ -81,8 +88,8 @@ public class CouponController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:coupon:update")
-    public R update(@RequestBody CouponEntity coupon) {
-        couponService.updateById(coupon);
+    public R update(@RequestBody CouponEntity coupon){
+		couponService.updateById(coupon);
 
         return R.ok();
     }
@@ -92,9 +99,10 @@ public class CouponController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:coupon:delete")
-    public R delete(@RequestBody Long[] ids) {
-        couponService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids){
+		couponService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
+
 }

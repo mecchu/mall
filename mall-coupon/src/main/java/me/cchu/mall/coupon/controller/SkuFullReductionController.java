@@ -1,35 +1,34 @@
 package me.cchu.mall.coupon.controller;
 
-import me.cchu.common.to.SkuReductionTo;
-import me.cchu.common.utils.PageUtils;
-import me.cchu.common.utils.R;
-import me.cchu.mall.coupon.entity.SkuFullReductionEntity;
-import me.cchu.mall.coupon.service.SkuFullReductionService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import me.cchu.mall.coupon.entity.SkuFullReductionEntity;
+import me.cchu.mall.coupon.service.SkuFullReductionService;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.R;
+
 
 
 /**
  * 商品满减信息
  *
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 @RestController
 @RequestMapping("coupon/skufullreduction")
 public class SkuFullReductionController {
     @Autowired
     private SkuFullReductionService skuFullReductionService;
-
-
-    @PostMapping("/saveinfo")
-    public R saveInfo(@RequestBody SkuReductionTo reductionTo){
-
-        skuFullReductionService.saveSkuReduction(reductionTo);
-        return R.ok();
-    }
-
 
     /**
      * 列表

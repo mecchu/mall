@@ -8,6 +8,8 @@ class MallCouponApplicationTests {
 
 	@Test
 	void contextLoads() {
+
+
 	}
 
 }

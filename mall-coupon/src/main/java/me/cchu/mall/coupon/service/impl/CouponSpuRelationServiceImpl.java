@@ -1,16 +1,16 @@
 package me.cchu.mall.coupon.service.impl;
 
+import org.springframework.stereotype.Service;
+import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zsy.common.utils.PageUtils;
-import com.zsy.common.utils.Query;
-import com.zsy.coupon.dao.CouponSpuRelationDao;
-import com.zsy.coupon.entity.CouponSpuRelationEntity;
-import com.zsy.coupon.service.CouponSpuRelationService;
-import org.springframework.stereotype.Service;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.Query;
 
-import java.util.Map;
+import me.cchu.mall.coupon.dao.CouponSpuRelationDao;
+import me.cchu.mall.coupon.entity.CouponSpuRelationEntity;
+import me.cchu.mall.coupon.service.CouponSpuRelationService;
 
 
 @Service("couponSpuRelationService")

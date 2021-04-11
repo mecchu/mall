@@ -18,15 +18,17 @@
         <module>mall-ware</module>
 
         <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>mall-gateway</module>
     </modules>
 
 
     <properties>
         <mall.version>1.0</mall.version>
 
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <lombok.version>1.18.18</lombok.version>
@@ -36,6 +38,9 @@
         <commons.lang.version>2.6</commons.lang.version>
         <elasticsearch.version>7.4.2</elasticsearch.version>
         <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -106,7 +111,23 @@
                 <version>${spring.boot.version}</version>
                 <scope>test</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <dependencies>
@@ -114,11 +135,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>me.cchu.mall</groupId>
-            <artifactId>mall-common</artifactId>
         </dependency>
     </dependencies>
 </project>

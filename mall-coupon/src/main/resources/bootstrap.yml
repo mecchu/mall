@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mall-coupon
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos.cchu.me:8848 # 注册中心
+      config:
+        server-addr: nacos.cchu.me:8848 # 配置中心
+        file-extension: yml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+        # 默认分组都属于 DEFALULT_GROUP
+        # 使用场景
+
+      #        group: DEV_GROUP
+      # 命名空间做环境隔离
+#        namespace: 51779aa5-eac1-4b2d-af3a-2a49894365fd
+#        extension-configs:
+      #  ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+      #   nacos-config-client-dev.yml
+      #config:
+      #  info: 233333333333
+

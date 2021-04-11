@@ -9,9 +9,9 @@ import java.util.Map;
 /**
  * 优惠券领取历史记录
  *
- * @author zsy
- * @email 594983498@qq.com
- * @date 2019-10-08 09:36:40
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 public interface CouponHistoryService extends IService<CouponHistoryEntity> {
 

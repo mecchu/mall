@@ -2,14 +2,18 @@ package me.cchu.mall.coupon.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
 
 /**
  * 商品满减信息
  * 
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 @Data
 @TableName("sms_sku_full_reduction")

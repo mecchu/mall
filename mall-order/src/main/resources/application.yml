@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: cchu
+    password: cchucchu
+    url: jdbc:mysql://mysql.cchu.me:3306/mall_oms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 9000
+
+

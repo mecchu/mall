@@ -9,7 +9,10 @@ import java.util.Date;
 
 /**
  * 优惠券领取历史记录
- *
+ * 
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 @Data
 @TableName("sms_coupon_history")

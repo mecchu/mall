@@ -12,6 +12,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.4.RELEASE</version>
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -51,6 +52,12 @@
 	</properties>
 
 	<dependencies>
+		<!--		FIXME-->
+		<dependency>
+			<groupId>me.cchu.mall</groupId>
+			<artifactId>mall-common</artifactId>
+			<version>1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

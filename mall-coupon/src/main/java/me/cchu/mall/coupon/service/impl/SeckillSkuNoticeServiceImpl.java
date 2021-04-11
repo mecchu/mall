@@ -1,16 +1,16 @@
 package me.cchu.mall.coupon.service.impl;
 
+import org.springframework.stereotype.Service;
+import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zsy.common.utils.PageUtils;
-import com.zsy.common.utils.Query;
-import com.zsy.coupon.dao.SeckillSkuNoticeDao;
-import com.zsy.coupon.entity.SeckillSkuNoticeEntity;
-import com.zsy.coupon.service.SeckillSkuNoticeService;
-import org.springframework.stereotype.Service;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.Query;
 
-import java.util.Map;
+import me.cchu.mall.coupon.dao.SeckillSkuNoticeDao;
+import me.cchu.mall.coupon.entity.SeckillSkuNoticeEntity;
+import me.cchu.mall.coupon.service.SeckillSkuNoticeService;
 
 
 @Service("seckillSkuNoticeService")

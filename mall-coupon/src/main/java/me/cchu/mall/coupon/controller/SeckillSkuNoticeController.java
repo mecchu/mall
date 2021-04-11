@@ -1,18 +1,28 @@
 package me.cchu.mall.coupon.controller;
 
-import me.cchu.common.utils.PageUtils;
-import me.cchu.common.utils.R;
-import me.cchu.mall.coupon.entity.SeckillSkuNoticeEntity;
-import me.cchu.mall.coupon.service.SeckillSkuNoticeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import me.cchu.mall.coupon.entity.SeckillSkuNoticeEntity;
+import me.cchu.mall.coupon.service.SeckillSkuNoticeService;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.R;
+
 
 
 /**
  * 秒杀商品通知订阅
+ *
+ * @author cchu
+ * @email cchu@cchu.me
+ * @date 2021-04-11 16:25:02
  */
 @RestController
 @RequestMapping("coupon/seckillskunotice")

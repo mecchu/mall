@@ -3,11 +3,11 @@ package me.cchu.mall.coupon.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zsy.common.utils.PageUtils;
-import com.zsy.common.utils.Query;
-import com.zsy.coupon.dao.CouponDao;
-import com.zsy.coupon.entity.CouponEntity;
-import com.zsy.coupon.service.CouponService;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.Query;
+import me.cchu.mall.coupon.dao.CouponDao;
+import me.cchu.mall.coupon.entity.CouponEntity;
+import me.cchu.mall.coupon.service.CouponService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

@@ -3,12 +3,14 @@ package me.cchu.mall.product;
 import lombok.extern.slf4j.Slf4j;
 import me.cchu.mall.product.dao.AttrGroupDao;
 import me.cchu.mall.product.dao.SkuSaleAttrValueDao;
+import me.cchu.mall.product.entity.BrandEntity;
 import me.cchu.mall.product.service.BrandService;
 import me.cchu.mall.product.service.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Slf4j
 @SpringBootTest
@@ -93,7 +95,14 @@ class MallProductApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		System.out.println(Integer.MAX_VALUE);
+
+		BrandEntity brandEntity = new BrandEntity();
+		brandEntity.setDescript("大米");
+		brandEntity.setName("dami");
+		brandService.save(brandEntity);
+
+		List<BrandEntity> list = brandService.list();
+		System.out.println(list);
 
 	}
 }

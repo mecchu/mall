@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: mall-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos.cchu.me:8848 # 注册中心
+      config:
+        server-addr: nacos.cchu.me:8848 # 配置中心
+        file-extension: yml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+      #        group: DEV_GROUP
+      #        namespace: 51779aa5-eac1-4b2d-af3a-2a49894365fd
+
+      #  ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+      #   nacos-config-client-dev.yml
+      #config:
+      #  info: 233333333333
