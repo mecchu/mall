@@ -51,7 +51,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
     @Autowired
     private SeckillFeignService seckillFeignService;
 
-    @Resource
+    @Autowired
     private ThreadPoolExecutor executor;
 
     @Override
