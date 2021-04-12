@@ -1,10 +1,16 @@
 package me.cchu.mall.product.service.impl;
 
 import com.alibaba.fastjson.TypeReference;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import me.cchu.common.utils.PageUtils;
+import me.cchu.common.utils.Query;
 import me.cchu.common.utils.R;
+import me.cchu.mall.product.dao.SkuInfoDao;
 import me.cchu.mall.product.entity.SkuImagesEntity;
+import me.cchu.mall.product.entity.SkuInfoEntity;
 import me.cchu.mall.product.entity.SpuInfoDescEntity;
-import me.cchu.mall.product.feign.SeckillFeignService;
 import me.cchu.mall.product.service.*;
 import me.cchu.mall.product.vo.SeckillSkuVo;
 import me.cchu.mall.product.vo.SkuItemSaleAttrVo;
@@ -14,23 +20,13 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import me.cchu.common.utils.PageUtils;
-import me.cchu.common.utils.Query;
-
-import me.cchu.mall.product.dao.SkuInfoDao;
-import me.cchu.mall.product.entity.SkuInfoEntity;
-
-import javax.annotation.Resource;
 
 
 @Service("skuInfoService")
@@ -47,9 +43,9 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
 
     @Resource
     private SkuSaleAttrValueService skuSaleAttrValueService;
-
-    @Autowired
-    private SeckillFeignService seckillFeignService;
+//
+//    @Autowired
+//    private SeckillFeignService seckillFeignService;
 
     @Autowired
     private ThreadPoolExecutor executor;
@@ -177,7 +173,8 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
 
         CompletableFuture<Void> seckillFuture = CompletableFuture.runAsync(() -> {
             //3、远程调用查询当前sku是否参与秒杀优惠活动
-            R skuSeckilInfo = seckillFeignService.getSkuSeckilInfo(skuId);
+//            R skuSeckilInfo = seckillFeignService.getSkuSeckilInfo(skuId);
+            R skuSeckilInfo = null;
             if (skuSeckilInfo.getCode() == 0) {
                 //查询成功
                 SeckillSkuVo seckilInfoData = skuSeckilInfo.getData("data", new TypeReference<SeckillSkuVo>() {

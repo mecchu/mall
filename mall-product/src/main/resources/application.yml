@@ -44,7 +44,7 @@ mybatis-plus:
 
 logging:
   level:
-    me.cchu.mall: debug
+    root: debug
 
 
 #暴露所有端点
@@ -53,3 +53,11 @@ management:
     web:
       exposure:
         include: '*'
+
+mall:
+  thread:
+    core-size: 1
+    keep-alive-time: 2
+    max-size: 2
+
+ipAddr: redis.cchu.me
