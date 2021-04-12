@@ -50,6 +50,13 @@ spring:
         - id: third_party_route
           uri: lb://mall-third-party
           predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: third_party_route2
+          uri: lb://mall-third-party
+          predicates:
             - Path=/api/third-party/**
           filters:
             - RewritePath=/api/third-party/(?<segment>.*),/$\{segment}

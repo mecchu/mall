@@ -1,7 +1,7 @@
 package me.cchu.mall.seckill.interceptor;
 
-import com.firenay.common.constant.AuthServerConstant;
-import com.firenay.common.vo.MemberRsepVo;
+import me.cchu.common.constant.AuthServerConstant;
+import me.cchu.common.vo.MemberRsepVo;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.servlet.HandlerInterceptor;

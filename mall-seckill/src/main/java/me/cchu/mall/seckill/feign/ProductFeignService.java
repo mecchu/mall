@@ -1,6 +1,6 @@
 package me.cchu.mall.seckill.feign;
 
-import com.firenay.common.utils.R;
+import me.cchu.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

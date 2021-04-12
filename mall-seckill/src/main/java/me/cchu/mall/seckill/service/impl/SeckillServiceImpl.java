@@ -6,9 +6,9 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
-import com.firenay.common.to.mq.SecKillOrderTo;
-import com.firenay.common.utils.R;
-import com.firenay.common.vo.MemberRsepVo;
+import me.cchu.common.to.mq.SeckillOrderTo;
+import me.cchu.common.utils.R;
+import me.cchu.common.vo.MemberRsepVo;
 import me.cchu.mall.seckill.feign.CouponFeignService;
 import me.cchu.mall.seckill.feign.ProductFeignService;
 import me.cchu.mall.seckill.interceptor.LoginUserInterceptor;
@@ -174,7 +174,7 @@ public class SeckillServiceImpl implements SeckillService {
 								// 秒杀成功
 								// 快速下单 发送MQ
 								String orderSn = IdWorker.getTimeId() + UUID.randomUUID().toString().replace("-","").substring(7,8);
-								SecKillOrderTo orderTo = new SecKillOrderTo();
+								SeckillOrderTo orderTo = new SeckillOrderTo();
 								orderTo.setOrderSn(orderSn);
 								orderTo.setMemberId(memberRsepVo.getId());
 								orderTo.setNum(num);

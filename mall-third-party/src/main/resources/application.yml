@@ -1,0 +1,26 @@
+server:
+  port: 30000
+
+spring:
+  application:
+    name: mall-third-party
+#    sentinel:
+#      transport:
+#        dashboard: sentinel.cchu.me:8333
+#  zipkin:
+#    base-url: zipkin.cchu.me:9411/
+#    # 关闭我们自动的服务发现功能
+#    discovery-client-enabled: false
+#    sender:
+#      type: web
+  sleuth:
+    sampler:
+      probability: 1
+
+
+#暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
