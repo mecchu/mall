@@ -84,7 +84,7 @@ class MallProductApplicationTests {
 //		// 上传文件流。
 //		InputStream inputStream = new FileInputStream("C:\\Users\\Jerry\\Desktop\\1.png");
 //
-//		ossClient.putObject("gulimall-clouds", "1.png", inputStream);
+//		ossClient.putObject("mall-clouds", "1.png", inputStream);
 //
 //		// 关闭OSSClient。
 //		ossClient.shutdown();
