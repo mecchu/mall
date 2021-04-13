@@ -11,6 +11,7 @@ import me.cchu.mall.product.dao.SkuInfoDao;
 import me.cchu.mall.product.entity.SkuImagesEntity;
 import me.cchu.mall.product.entity.SkuInfoEntity;
 import me.cchu.mall.product.entity.SpuInfoDescEntity;
+import me.cchu.mall.product.feign.SeckillFeignService;
 import me.cchu.mall.product.service.*;
 import me.cchu.mall.product.vo.SeckillSkuVo;
 import me.cchu.mall.product.vo.SkuItemSaleAttrVo;
@@ -44,8 +45,8 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
     @Resource
     private SkuSaleAttrValueService skuSaleAttrValueService;
 //
-//    @Autowired
-//    private SeckillFeignService seckillFeignService;
+    @Autowired
+    private SeckillFeignService seckillFeignService;
 
     @Autowired
     private ThreadPoolExecutor executor;

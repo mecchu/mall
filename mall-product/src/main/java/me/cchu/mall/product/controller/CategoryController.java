@@ -4,10 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import me.cchu.mall.product.entity.CategoryEntity;
 import me.cchu.mall.product.service.CategoryService;
@@ -77,7 +74,7 @@ public class CategoryController {
      * @RequestBody:获取请求体，必须发送POST请求
      * SpringMVC自动将请求体的数据(json)转换为对象
      */
-    @RequestMapping("/delete")
+    @DeleteMapping("/delete")
     //@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds){
 
