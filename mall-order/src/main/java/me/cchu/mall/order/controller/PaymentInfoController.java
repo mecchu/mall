@@ -1,32 +1,25 @@
 package me.cchu.mall.order.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import me.cchu.mall.order.entity.PaymentInfoEntity;
-import me.cchu.mall.order.service.PaymentInfoService;
 import me.cchu.common.utils.PageUtils;
 import me.cchu.common.utils.R;
+import me.cchu.mall.order.entity.PaymentInfoEntity;
+import me.cchu.mall.order.service.PaymentInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 支付信息表
  *
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 15:19:05
  */
 @RestController
 @RequestMapping("order/paymentinfo")
 public class PaymentInfoController {
+
+
     @Autowired
     private PaymentInfoService paymentInfoService;
 
@@ -79,7 +72,7 @@ public class PaymentInfoController {
      * 删除
      */
     @RequestMapping("/delete")
-    //@RequiresPermissions("order:paymentinfo:delete")
+    //@RequiresPermissions("${moduleNamez}:paymentinfo:delete")
     public R delete(@RequestBody Long[] ids){
 		paymentInfoService.removeByIds(Arrays.asList(ids));
 

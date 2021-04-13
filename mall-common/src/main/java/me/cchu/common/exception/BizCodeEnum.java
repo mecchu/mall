@@ -13,7 +13,6 @@ package me.cchu.common.exception;
  *  13: 购物车
  *  14: 物流
  *
- * @author ZSY
  */
 public enum BizCodeEnum {
     /**

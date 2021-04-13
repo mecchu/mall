@@ -1,17 +1,23 @@
 package me.cchu.mall.ware.dao;
 
-import me.cchu.mall.ware.entity.WareSkuEntity;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
-/**
- * 商品库存
- * 
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 16:47:59
- */
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import me.cchu.mall.ware.entity.WareSkuEntity;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
 @Mapper
 public interface WareSkuDao extends BaseMapper<WareSkuEntity> {
-	
+
+	void addStock(@Param("skuId") Long skuId, @Param("wareId") Long wareId, @Param("skuNum") Integer skuNum);
+
+	Long getSkuStock(@Param("id") Long id);
+
+	List<Long> listWareIdHasSkuStock(@Param("skuId") Long skuId);
+
+	Long lockSkuStock(@Param("skuId") Long skuId,@Param("wareId") Long wareId, @Param("num") Integer num);
+
+	void unlockStock(@Param("skuId") Long skuId, @Param("wareId") Long wareId, @Param("num") Integer num);
 }

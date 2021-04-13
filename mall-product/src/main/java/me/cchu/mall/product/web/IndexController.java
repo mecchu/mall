@@ -36,7 +36,7 @@ public class IndexController {
     private String indexPage(Model model) {
 
         //1、查出所有的一级分类
-        List<CategoryEntity> categoryEntities = categoryService.getLevel1Categories();
+        List<CategoryEntity> categoryEntities = categoryService.getLevel1Categorys();
         model.addAttribute("categories",categoryEntities);
 
         return "index";
@@ -48,7 +48,8 @@ public class IndexController {
     @ResponseBody
     public Map<String, List<Catelog2Vo>> getCatalogJson() {
 
-        Map<String, List<Catelog2Vo>> catalogJson = categoryService.getCatalogJson();
+//        Map<String, List<Catelog2Vo>> catalogJson = categoryService.getCatelogJson();
+        Map<String, List<Catelog2Vo>> catalogJson = categoryService.getCatelogJsonFromDBWithLocalLock();
 
         return catalogJson;
     }

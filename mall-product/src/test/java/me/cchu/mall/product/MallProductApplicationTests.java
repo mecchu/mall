@@ -8,9 +8,12 @@ import me.cchu.mall.product.service.BrandService;
 import me.cchu.mall.product.service.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @SpringBootTest
@@ -22,8 +25,8 @@ class MallProductApplicationTests {
 	@Resource
 	private CategoryService categoryService;
 
-//	@Resource
-//	private StringRedisTemplate stringRedisTemplate;
+	@Resource
+	private StringRedisTemplate stringRedisTemplate;
 
 //	@Autowired
 //	private RedissonClient redissonClient;
@@ -51,17 +54,17 @@ class MallProductApplicationTests {
 //		System.out.println(redissonClient);
 //	}
 
-//	@Test
-//	public void testStringRedis() {
-//		ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
-//
-//		//保存
-//		ops.set("hello","world_" + UUID.randomUUID().toString());
-//
-//		//查询
-//		String hello = ops.get("hello");
-//		System.out.println("之前保存的数据:"+hello);
-//	}
+	@Test
+	public void testStringRedis() {
+		ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
+
+		//保存
+		ops.set("hello","world_" + UUID.randomUUID().toString());
+
+		//查询
+		String hello = ops.get("hello");
+		System.out.println("之前保存的数据:"+hello);
+	}
 
 //	@Test
 //	public void testFindPath() {

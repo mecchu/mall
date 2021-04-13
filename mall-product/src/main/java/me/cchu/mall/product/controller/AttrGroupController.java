@@ -89,7 +89,7 @@ public class AttrGroupController {
     public R info(@PathVariable("attrGroupId") Long attrGroupId){
         AttrGroupEntity attrGroup = attrGroupService.getById(attrGroupId);
         // 用当前当前分类id查询完整路径并写入 attrGroup
-        attrGroup.setCatelogPath(categoryService.findCatelogPath(attrGroup.getCatelogId()));
+        attrGroup.setCatelogPath(categoryService.findCateLogPath(attrGroup.getCatelogId()));
         return R.ok().put("attrGroup", attrGroup);
     }
 

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: mall-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos.cchu.me:8848
+    sentinel:
+      transport:
+        dashboard: sentinel.cchu.me:8333

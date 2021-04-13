@@ -1,28 +1,19 @@
 package me.cchu.mall.order.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import me.cchu.mall.order.entity.OrderOperateHistoryEntity;
-import me.cchu.mall.order.service.OrderOperateHistoryService;
 import me.cchu.common.utils.PageUtils;
 import me.cchu.common.utils.R;
+import me.cchu.mall.order.entity.OrderOperateHistoryEntity;
+import me.cchu.mall.order.service.OrderOperateHistoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 订单操作历史记录
  *
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 15:19:05
  */
 @RestController
 @RequestMapping("order/orderoperatehistory")
@@ -79,7 +70,7 @@ public class OrderOperateHistoryController {
      * 删除
      */
     @RequestMapping("/delete")
-    //@RequiresPermissions("order:orderoperatehistory:delete")
+    //@RequiresPermissions("${moduleNamez}:orderoperatehistory:delete")
     public R delete(@RequestBody Long[] ids){
 		orderOperateHistoryService.removeByIds(Arrays.asList(ids));
 

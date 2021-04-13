@@ -10,20 +10,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.Map;
 
-
-
 /**
  * 订单
  *
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 15:19:05
  */
 @RestController
 @RequestMapping("order/order")
 public class OrderController {
+
     @Autowired
     private OrderService orderService;
+
+	/**
+	 * 查询当前登录的用户的所有订单信息
+	 */
+	@PostMapping("/listWithItem")
+	public R listWithItem(@RequestBody Map<String, Object> params){
+		PageUtils page = orderService.queryPageWithItem(params);
+
+		return R.ok().put("page", page);
+	}
+
+    @GetMapping("/status/{orderSn}")
+    public R getOrderStatus(@PathVariable("orderSn") String orderSn){
+    	OrderEntity orderEntity = orderService.getOrderByOrderSn(orderSn);
+
+    	return R.ok().setData(orderEntity);
+	}
 
     /**
      * 列表
@@ -36,7 +49,6 @@ public class OrderController {
         return R.ok().put("page", page);
     }
 
-
     /**
      * 信息
      */
@@ -45,7 +57,7 @@ public class OrderController {
     public R info(@PathVariable("id") Long id){
 		OrderEntity order = orderService.getById(id);
 
-        return R.ok().put("order", order);
+        return R.ok().put("mapper/order", order);
     }
 
     /**
@@ -74,7 +86,7 @@ public class OrderController {
      * 删除
      */
     @RequestMapping("/delete")
-    //@RequiresPermissions("order:order:delete")
+    //@RequiresPermissions("${moduleNamez}:order:delete")
     public R delete(@RequestBody Long[] ids){
 		orderService.removeByIds(Arrays.asList(ids));
 

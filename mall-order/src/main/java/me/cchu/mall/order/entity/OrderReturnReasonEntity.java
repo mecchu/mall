@@ -2,17 +2,14 @@ package me.cchu.mall.order.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 退货原因
  * 
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 15:19:05
  */
 @Data
 @TableName("oms_order_return_reason")

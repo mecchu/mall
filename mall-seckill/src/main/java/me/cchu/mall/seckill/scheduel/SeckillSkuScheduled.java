@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <p>Title: SeckillSkuScheduled</p>
- * Description：秒杀商品定时上架		[秒杀的定时任务调度]
- * date：2020/7/6 17:28
+ *  秒杀商品定时上架		[秒杀的定时任务调度]
  */
 @Slf4j
 @Service

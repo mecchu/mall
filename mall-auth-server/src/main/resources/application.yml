@@ -1,0 +1,24 @@
+ipAddr: redis.cchu.me
+spring:
+  application:
+    name: mall-auth-server
+
+  thymeleaf:
+    cache: false
+  session:
+    store-type: redis
+  redis:
+    host: ${ipAddr}
+server:
+  port: 20000
+  # session存活时间
+  servlet:
+    session:
+      timeout: 30m
+
+#暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * <p>Title: SeckillController</p>
- * Description：
- */
 @Controller
 public class SeckillController {
 

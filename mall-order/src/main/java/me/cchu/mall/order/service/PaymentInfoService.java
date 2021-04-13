@@ -9,9 +9,6 @@ import java.util.Map;
 /**
  * 支付信息表
  *
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 15:19:05
  */
 public interface PaymentInfoService extends IService<PaymentInfoEntity> {
 

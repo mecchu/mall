@@ -1,20 +1,13 @@
 package me.cchu.mall.ware.entity;
 
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
-/**
- * 
- * 
- * @author cchu
- * @email cchu@cchu.me
- * @date 2021-04-11 16:47:59
- */
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 @Data
 @TableName("wms_purchase_detail")
 public class PurchaseDetailEntity implements Serializable {
