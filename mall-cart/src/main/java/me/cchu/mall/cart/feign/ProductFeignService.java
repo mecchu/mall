@@ -1,10 +1,6 @@
 package me.cchu.mall.cart.feign;
 
-<<<<<<< HEAD
 import  me.cchu.common.utils.R;
-=======
-import com.firenay.common.utils.R;
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

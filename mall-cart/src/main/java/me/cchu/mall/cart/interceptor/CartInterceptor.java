@@ -1,14 +1,8 @@
 package me.cchu.mall.cart.interceptor;
 
-<<<<<<< HEAD
 import me.cchu.common.constant.AuthServerConstant;
 import me.cchu.common.constant.CartConstant;
 import me.cchu.common.vo.MemberRsepVo;
-=======
-import com.firenay.common.constant.AuthServerConstant;
-import com.firenay.common.constant.CartConstant;
-import com.firenay.common.vo.MemberRsepVo;
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 import me.cchu.mall.cart.vo.UserInfoTo;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
