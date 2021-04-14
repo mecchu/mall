@@ -25,6 +25,6 @@ public class SmsSendController {
 		if(!"fail".equals(smsComponent.sendSmsCode(phone, code).split("_")[0])){
 			return R.ok();
 		}
-		return R.error(BizCodeEnum.SMS_SEND_CODE_EXCEPTION.getCode(), BizCodeEnum.SMS_SEND_CODE_EXCEPTION.getMsg());
+		return R.error(BizCodeEnum.SMS_CODE_EXCEPTION.getCode(), BizCodeEnum.SMS_CODE_EXCEPTION.getMsg());
 	}
 }

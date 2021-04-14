@@ -9,6 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MyWebConfig implements WebMvcConfigurer {
 
 
+	/**
+	 *  视图映射
+	 * @param registry
+	 */
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 

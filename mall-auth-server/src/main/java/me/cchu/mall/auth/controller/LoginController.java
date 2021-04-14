@@ -50,7 +50,7 @@ public class LoginController {
 		if(attribute == null){
 			return "login";
 		}
-		return "redirect:http://glmall.com";
+		return "redirect:http://mall.com";
 	}
 
 	@PostMapping("/login")
@@ -62,13 +62,13 @@ public class LoginController {
 			MemberRsepVo rsepVo = r.getData("data", new TypeReference<MemberRsepVo>() {});
 			session.setAttribute(AuthServerConstant.LOGIN_USER, rsepVo);
 			log.info("\n欢迎 [" + rsepVo.getUsername() + "] 登录");
-			return "redirect:http://glmall.com";
+			return "redirect:http://mall.com";
 		}else {
 			HashMap<String, String> error = new HashMap<>();
 			// 获取错误信息
 			error.put("msg", r.getData("msg",new TypeReference<String>(){}));
 			redirectAttributes.addFlashAttribute("errors", error);
-			return "redirect:http://auth.glmall.com/login.html";
+			return "redirect:http://auth.mall.com/login.html";
 		}
 	}
 
@@ -112,7 +112,7 @@ public class LoginController {
 			Map<String, String> errors = result.getFieldErrors().stream().collect(Collectors.toMap(FieldError::getField, fieldError -> fieldError.getDefaultMessage()));
 			// addFlashAttribute 这个数据只取一次
 			redirectAttributes.addFlashAttribute("errors", errors);
-			return "redirect:http://auth.glmall.com/reg.html";
+			return "redirect:http://auth.mall.com/reg.html";
 		}
 		// 开始注册 调用远程服务
 		// 1.校验验证码
@@ -128,26 +128,26 @@ public class LoginController {
 				R r = memberFeignService.register(vo);
 				if(r.getCode() == 0){
 					// 成功
-					return "redirect:http://auth.glmall.com/login.html";
+					return "redirect:http://auth.mall.com/login.html";
 				}else{
 					Map<String, String> errors = new HashMap<>();
 					errors.put("msg",r.getData("msg",new TypeReference<String>(){}));
 					redirectAttributes.addFlashAttribute("errors",errors);
-					return "redirect:http://auth.glmall.com/reg.html";
+					return "redirect:http://auth.mall.com/reg.html";
 				}
 			}else{
 				Map<String, String> errors = new HashMap<>();
 				errors.put("code", "验证码错误");
 				// addFlashAttribute 这个数据只取一次
 				redirectAttributes.addFlashAttribute("errors", errors);
-				return "redirect:http://auth.glmall.com/reg.html";
+				return "redirect:http://auth.mall.com/reg.html";
 			}
 		}else{
 			Map<String, String> errors = new HashMap<>();
 			errors.put("code", "验证码错误");
 			// addFlashAttribute 这个数据只取一次
 			redirectAttributes.addFlashAttribute("errors", errors);
-			return "redirect:http://auth.glmall.com/reg.html";
+			return "redirect:http://auth.mall.com/reg.html";
 		}
 	}
 }
