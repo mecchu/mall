@@ -5,6 +5,10 @@ import java.util.Map;
 
 import me.cchu.mall.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+=======
+import org.springframework.context.annotation.Lazy;
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,13 +37,21 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+<<<<<<< HEAD
+=======
+    @Lazy
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
     @Resource
     private CouponFeignService couponFeignService;
 
     @RequestMapping("/coupons")
     public R getMemberCoupons(){
         MemberEntity memberEntity = new MemberEntity();
+<<<<<<< HEAD
         memberEntity.setNickname("cchu");
+=======
+        memberEntity.setNickname("fireNay");
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
         // 远程调用
         System.out.println(couponFeignService);
         R memberCoupons = couponFeignService.memberCoupons();

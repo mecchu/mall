@@ -14,7 +14,7 @@ server:
   port: 7000
 
 # 优先读取bootstrap.yaml中配置中心的配置
-#coupon:
-#  user:
-#    name: zhangsan
-#    age: 12
+coupon:
+  user:
+    name: zhangsan
+    age: 12

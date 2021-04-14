@@ -6,6 +6,10 @@ import java.util.List;
 /**
  * <p>Title: CartItem</p>
  * Description：购物项
+<<<<<<< HEAD
+=======
+ * date：2020/6/27 21:11
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
  */
 public class CartItem {
 

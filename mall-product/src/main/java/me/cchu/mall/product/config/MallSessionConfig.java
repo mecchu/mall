@@ -8,13 +8,13 @@ import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
 @Configuration
-public class GlMallSessionConfig {
+public class MallSessionConfig {
 
 	@Bean
 	public CookieSerializer cookieSerializer(){
 		DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
 		// 明确的指定Cookie的作用域
-		cookieSerializer.setDomainName("glmall.com");
+		cookieSerializer.setDomainName("mall.com");
 		cookieSerializer.setCookieName("FIRESESSION");
 		return cookieSerializer;
 	}

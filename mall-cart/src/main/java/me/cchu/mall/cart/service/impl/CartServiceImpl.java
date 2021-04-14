@@ -2,7 +2,11 @@ package me.cchu.mall.cart.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+<<<<<<< HEAD
 import me.cchu.common.utils.R;
+=======
+import com.firenay.common.utils.R;
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 import me.cchu.mall.cart.feign.ProductFeignService;
 import me.cchu.mall.cart.interceptor.CartInterceptor;
 import me.cchu.mall.cart.service.CartService;
@@ -24,6 +28,14 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
+<<<<<<< HEAD
+=======
+/**
+ * <p>Title: CartServiceImpl</p>
+ * Description：
+ * date：2020/6/27 22:17
+ */
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 @Slf4j
 @Service
 public class CartServiceImpl implements CartService {
@@ -174,7 +186,10 @@ public class CartServiceImpl implements CartService {
 
 	/**
 	 * 获取购物车所有项
+<<<<<<< HEAD
 	 * @return
+=======
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
 	 */
 	private List<CartItem> getCartItems(String cartKey){
 		BoundHashOperations<String, Object, Object> hashOps = stringRedisTemplate.boundHashOps(cartKey);

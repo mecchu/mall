@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 /**
  * <p>Title: SkuInfoVo</p>
  * Description：用于封装远程返回的Sku对象
+<<<<<<< HEAD
+=======
+ * date：2020/6/28 11:33
+>>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
  */
 @Data
 public class SkuInfoVo {
