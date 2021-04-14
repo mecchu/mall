@@ -5,6 +5,9 @@ server:
       timeout: 30m
 
 spring:
+  cache:
+    type: redis
+
   datasource:
     username: cchu
     password: cchucchu
