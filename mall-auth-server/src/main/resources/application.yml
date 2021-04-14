@@ -9,6 +9,7 @@ spring:
     store-type: redis
   redis:
     host: ${ipAddr}
+
 server:
   port: 20000
   # session存活时间

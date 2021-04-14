@@ -60,6 +60,7 @@ public class LoginController {
 		if(r.getCode() == 0){
 			// 登录成功
 			MemberRsepVo rsepVo = r.getData("data", new TypeReference<MemberRsepVo>() {});
+
 			session.setAttribute(AuthServerConstant.LOGIN_USER, rsepVo);
 			log.info("\n欢迎 [" + rsepVo.getUsername() + "] 登录");
 			return "redirect:http://mall.com";
