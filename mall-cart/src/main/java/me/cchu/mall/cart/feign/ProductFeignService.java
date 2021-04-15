@@ -8,14 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * <p>Title: ProductFeignService</p>
- * Description：
-<<<<<<< HEAD
-=======
- * date：2020/6/28 11:29
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
- */
+
 @FeignClient("mall-product")
 public interface ProductFeignService {
 

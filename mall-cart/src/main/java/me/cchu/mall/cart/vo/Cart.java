@@ -3,14 +3,7 @@ package me.cchu.mall.cart.vo;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * <p>Title: Cart</p>
- * Description：整个购物车
-<<<<<<< HEAD
-=======
- * date：2020/6/27 21:10
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
- */
+
 public class Cart {
 
 	private List<CartItem> items;

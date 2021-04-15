@@ -7,14 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-/**
- * <p>Title: CartService</p>
- * Description：
-<<<<<<< HEAD
-=======
- * date：2020/6/27 22:17
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
- */
+
 public interface CartService {
 
 	/**

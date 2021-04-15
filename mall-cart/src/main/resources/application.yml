@@ -9,7 +9,7 @@ spring:
   redis:
     host: redis.cchu.me
 
-glmall:
+mall:
   thread:
     core-size: 20
     max-size: 200

@@ -14,14 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
-/**
- * <p>Title: CartInterceptor</p>
- * Description：在执行目标之前 判断用户是否登录,并封装
-<<<<<<< HEAD
-=======
- * date：2020/6/27 22:27
->>>>>>> ca0ed446bf0eb3e65dd4b881427e2993d04a31f6
- */
+
 public class CartInterceptor implements HandlerInterceptor {
 
 	public static ThreadLocal<UserInfoTo> threadLocal = new ThreadLocal<>();

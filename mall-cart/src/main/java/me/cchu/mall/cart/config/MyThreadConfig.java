@@ -8,11 +8,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * <p>Title: MyThreadConfig</p>
- * Description：配置线程池
- * date：2020/6/28 11:20
- */
+
 // 开启这个属性配置
 //@EnableConfigurationProperties(ThreadPoolConfigProperties.class)
 @Configuration
