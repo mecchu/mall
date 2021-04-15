@@ -26,6 +26,12 @@ public class CartController {
 	@Autowired
 	private CartService cartService;
 
+	@GetMapping
+	@ResponseBody
+	public String hello() {
+		return "hello";
+	}
+
 	@ResponseBody
 	@GetMapping("/currentUserCartItems")
 	public List<CartItem> getCurrentUserCartItems(){
