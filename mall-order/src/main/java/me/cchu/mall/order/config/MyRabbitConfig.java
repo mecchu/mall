@@ -58,7 +58,7 @@ public class MyRabbitConfig {
 	 *       simple:
 	 *         acknowledge-mode: manual
 	 */
-//	@PostConstruct
+//	@PostConstruct // 配置对象创造完成以后 执行这个方法
 	public void initRabbitTemplate(){
 		/**
 		 * 		设置确认回调
@@ -66,7 +66,8 @@ public class MyRabbitConfig {
 		 *  ack： 消息是否成功收到
 		 * 	cause：失败的原因
 		 */
-		rabbitTemplate.setConfirmCallback((correlationData, ack , cause) -> log.info("\n收到消息: " + correlationData + "\tack: " + ack + "\tcause： " + cause));
+		rabbitTemplate.setConfirmCallback((correlationData, ack , cause)
+				-> log.info("\n收到消息: " + correlationData + "\tack: " + ack + "\tcause： " + cause));
 
 		/**
 		 * 设置消息抵达队列回调：可以很明确的知道那些消息失败了
@@ -77,6 +78,8 @@ public class MyRabbitConfig {
 		 * exchange: 当时这个发送给那个交换机
 		 * routerKey: 当时这个消息用那个路由键
 		 */
-		rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routerKey) -> log.error("Fail Message [" + message + "]" + "\treplyCode: " + replyCode + "\treplyText:" + replyText + "\texchange:" + exchange + "\trouterKey:" + routerKey));
+		rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routerKey)
+				-> log.error("Fail Message [" + message + "]" + "\treplyCode: " + replyCode
+				 + "\treplyText:" + replyText + "\texchange:" + exchange + "\trouterKey:" + routerKey));
 	}
 }

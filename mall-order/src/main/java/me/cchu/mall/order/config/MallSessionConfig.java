@@ -8,12 +8,10 @@ import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
 /**
- * <p>Title: GlMallSessionConfig</p>
- * Description：设置Session作用域、自定义cookie序列化机制
- * date：2020/6/29 21:28
+ *  设置Session作用域、自定义cookie序列化机制
  */
 @Configuration
-public class GlMallSessionConfig {
+public class MallSessionConfig {
 
 	@Bean
 	public CookieSerializer cookieSerializer(){

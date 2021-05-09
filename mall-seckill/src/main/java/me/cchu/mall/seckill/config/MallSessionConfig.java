@@ -7,12 +7,9 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
 
-/**
- * <p>Title: GlMallSessionConfig</p>
- * Description：设置Session作用域、自定义cookie序列化机制
- */
+
 @Configuration
-public class GlMallSessionConfig {
+public class MallSessionConfig {
 
 	@Bean
 	public CookieSerializer cookieSerializer(){

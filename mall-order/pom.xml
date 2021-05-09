@@ -58,6 +58,17 @@
 			<artifactId>jedis</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+<!--			<exclusions>-->
+<!--				<exclusion>-->
+<!--					<groupId>io.seata</groupId>-->
+<!--					<artifactId>seata-all</artifactId>-->
+<!--				</exclusion>-->
+<!--			</exclusions>-->
+		</dependency>
+
 	</dependencies>
 
 	<build>

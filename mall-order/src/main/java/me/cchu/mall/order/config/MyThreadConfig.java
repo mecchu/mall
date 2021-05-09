@@ -9,9 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * <p>Title: MyThreadConfig</p>
- * Description：配置线程池
- * date：2020/6/25 10:58
+ * 配置线程池
  */
 // 开启这个属性配置
 //@EnableConfigurationProperties(ThreadPoolConfigProperties.class)

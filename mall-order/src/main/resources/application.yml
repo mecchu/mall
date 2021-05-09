@@ -6,14 +6,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   rabbitmq:
-    host: rabiitmp.cchu.me
+    host: rabbitmq.cchu.me
     port: 5672
     # 指定虚拟主机
     virtual-host: /
     username: cchu
     password: cchucchu
     # 开启发送端确认
-    publisher-confirms: true
+#    publisher-confirms: true
+    publisher-confirm-type: correlated
     #　开启发送端消息抵达队列确认
     publisher-returns: true
     # 只要抵达队列，以异步优先回调我们这个 returnconfirm
@@ -24,6 +25,21 @@ spring:
       simple:
         acknowledge-mode: manual
 
+  redis:
+    host: redis.cchu.me
+    port: 6379
+
+  #开启feign对sentinel的支持
+  feign:
+    sentinel:
+      enabled: true
+
+    session:
+      store-type: redis
+
+
+
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -32,4 +48,25 @@ mybatis-plus:
 server:
   port: 9000
 
+myRabbitmq:
+  queue: mall-queue
+  exchange: mall-exchange
+  routeKey: mall
+  MQConfig:
+    # 订单队列
+    queues: order.release.order.queue
+    delayQueue: order.delay.queue
+    eventExchange: order-event-exchange
+    routingKey: order.release.order
+    createOrder: order.create.order
+    # 订单自动过期时间 单位:(毫秒)
+    ttl: 900000
+    # 库存解锁队列
+    ReleaseOther: stock.release.stock.queue
+    ReleaseOtherKey: order.release.other
 
+mall:
+  thread:
+    core-size: 1
+    keep-alive-time: 2
+    max-size: 2
